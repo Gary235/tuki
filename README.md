@@ -1,4 +1,14 @@
-# TUKI
+# T.U.K.I. (The Ultimate Kernel Implementation)
+
+### Objectives of the Practical Work
+
+By completing this work, it is expected that the student:
+
+  1. Acquires practical concepts of using different programming tools and interfaces (APIs) provided by operating systems.
+  2. Understands aspects of operating system design.
+  3. Reinforces various theoretical concepts of the subject through the practical implementation of some of them.
+  4. Becomes familiar with system programming techniques, such as the use of makefiles, configuration files, and log files.
+  5. Gains a detailed understanding of Linux operation through the use of a relatively low-level programming language like C.
 
 ## Deployment Guide ##
 
