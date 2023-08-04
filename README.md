@@ -1,63 +1,56 @@
-# tp-2023-1c-Los-Magios
+# TUKI
 
-Gary Ezequiel Berkman - 2034104 - K3153
+## Deployment Guide ##
 
-Roman Brezman - 2034323 - K3053
+1. If necessary, make the necessary configurations in PUTTY to connect the PC with the VM.
 
-Federico Ascorti - 2033823 - K3014
-
-Tamir Feldenblum - 2036022 - K3053
-
-## Guia para Deploy ##
-
-1. Si es necesario, hacer las configuraciones necesarias en PUTTY para conectar la pc con la vm.
-
-2. Abrir una terminal en `home/utnso/` (probablemente sea la direccion base).
+2. Open a terminal in `home/utnso/` (this is likely the base directory).
 
 
 ```bash
-# 3. Clonar el proyecto desde github
+# 3. Clone the project from github
 $ git clone https://github.com/sisoputnfrba/tp-2023-1c-Los-Magios.git
 
-# 4. Acceder directorio de la carpeta clonada
+# 4. Access the directory of the cloned folder
 $ cd tp-2023-1c-Los-Magios/
 
-# 5. Correr script que configura el proyecto
+# 5. Run the script that configures the project
 $ bash ./scripts/configurar_tuki.sh
 
-# 6. Acceder al directorio "/home/utnso/"
+# 6. Access the directory "/home/utnso/"
 $ cd
 
-# 7. Setear la variable de entorno $LD_LIBRARY_PATH
+# 7. Set the $LD_LIBRARY_PATH environment variable
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/tp-2023-1c-Los-Magios/shared_tuki/Debug
 
-# 8. Mostrar la variable para verificar que se haya seteado correctamente
+# 8. Display the variable to verify that it has been set correctly
 $ echo $LD_LIBRARY_PATH
 
-# 9. Volver al directorio de la carpeta clonada
+# 9. Go back to the directory of the cloned folder
 $ cd tp-2023-1c-Los-Magios/
 
-# 10. Correr script que compila los modulos
+# 10. Run the script that compiles the modules
 $ bash ./scripts/compilar_modulos.sh
 ```
 
-11. Levantar los módulos en las VMs en el mismo orden que se prendieron las mismas (Memoria -> FileSystem -> CPU -> Kernel).
+11. Start the modules in the VMs in the same order they were turned on (Memory -> FileSystem -> CPU -> Kernel).
 
 
-## Guia para Levantar Modulo ##
+## Guide to Start Module ##
 
 ```bash
-# Reemplazar <MODULO> con el nombre de la carpeta de tal modulo (Consola / Kernel / CPU / FileSystem / Memoria)
-# Si el modulo a levantar es Consola, se debera mandar como segundo parametro las intrucciones deseadas (por ejemplo: error_1, error_2, fs_1, base_2...)
-$ bash ./scripts/levantar_modulo.sh <MODULO> <INSTRUCCIONES?>
+# Replace <MODULE> with the name of the folder of that module (Consola / Kernel / CPU / FileSystem / Memoria)
+# If the module to start is Consola, the desired instructions should be passed as the second parameter (for example: error_1, error_2, fs_1, base_2...)
+$ bash ./scripts/levantar_modulo.sh <MODULE> <INSTRUCTIONS?>
 ```
 
-## Guia para correr las Pruebas ##
+## Guide for Running Tests ##
 
 ```bash
 
-# 1. Reemplazar las ips de los archivos config con las que corresponda (por default es 127.0.0.1)
-$ bash ./scripts/setear_ips.sh <IP_MEMORIA> <IP_FILESYSTEM> <IP_CPU>
+# 1. Replace the IPs in the config files with the appropriate ones (default is 127.0.0.1)
+$ bash ./scripts/setear_ips.sh <IP_MEMORY> <IP_FILESYSTEM> <IP_CPU>```
+
 
 # 2. Configurar la prueba deseada (por ejemplo: prueba_base, prueba_deadlock, prueba_errores...)
 $ bash ./scripts/configurar_prueba.sh <PRUEBA>
